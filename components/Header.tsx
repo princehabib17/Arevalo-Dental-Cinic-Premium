@@ -8,33 +8,51 @@ interface HeaderProps {
 }
 
 const Logo: React.FC = () => (
-    <a href="#" className="flex items-center gap-2 group">
-        <span className="font-extrabold text-2xl tracking-tighter text-[#101010] group-hover:text-[#006C35] transition-colors duration-500">
-            AREVALO<span className="text-[#006C35]">.</span>
-        </span>
+    <a href="#" className="flex items-center gap-2 group outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#006C35] rounded-lg px-2 -ml-2">
+        <img 
+            src="https://res.cloudinary.com/deulmakpv/image/upload/v1761683378/Group_475_hbbgt2.png" 
+            alt="Arevalo Dental" 
+            className="h-10 sm:h-12 w-auto object-contain transition-all duration-300 drop-shadow-sm" 
+        />
     </a>
 );
 
 const LanguageToggle: React.FC<HeaderProps> = ({ language, setLanguage }) => {
     const isEn = language === 'en';
-    const isAr = language === 'ar';
-
+    
     return (
-        <div className="flex items-center bg-gray-100 rounded-full p-1 relative">
-            <div 
-                className={`absolute top-1 bottom-1 w-[45%] bg-white shadow-sm rounded-full transition-all duration-300 ease-in-out ${isEn ? 'left-1' : 'left-[52%]'}`}
-            ></div>
+        <div className="flex items-center bg-white border border-zinc-200 rounded-full p-1 shadow-sm gap-1">
             <button
                 onClick={() => setLanguage('en')}
-                className={`relative z-10 px-4 py-1.5 text-xs font-bold transition-colors ${isEn ? 'text-[#101010]' : 'text-gray-400 hover:text-gray-600'}`}
+                className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006C35] ${
+                    isEn ? 'bg-zinc-900 text-white shadow-sm' : 'text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100'
+                }`}
             >
-                EN
+                <img 
+                    src="https://flagcdn.com/w40/us.png" 
+                    srcSet="https://flagcdn.com/w80/us.png 2x" 
+                    width="20" 
+                    height="15" 
+                    alt="English" 
+                    className="rounded-sm object-cover shadow-sm ring-1 ring-white/10"
+                />
+                <span className="leading-none pb-0.5">EN</span>
             </button>
             <button
                 onClick={() => setLanguage('ar')}
-                className={`relative z-10 px-4 py-1.5 text-xs font-bold transition-colors ${isAr ? 'text-[#101010]' : 'text-gray-400 hover:text-gray-600'}`}
+                className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006C35] ${
+                    !isEn ? 'bg-[#006C35] text-white shadow-sm' : 'text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100'
+                }`}
             >
-                AR
+                <img 
+                    src="https://flagcdn.com/w40/sa.png" 
+                    srcSet="https://flagcdn.com/w80/sa.png 2x" 
+                    width="20" 
+                    height="15" 
+                    alt="Arabic" 
+                    className="rounded-sm object-cover shadow-sm ring-1 ring-white/10"
+                />
+                <span className="leading-none pb-0.5">AR</span>
             </button>
         </div>
     );
@@ -45,28 +63,33 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage }) => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <header 
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-            scrolled ? 'bg-white/80 backdrop-blur-md border-b border-gray-200/50 py-4' : 'bg-transparent py-8'
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+            scrolled ? 'bg-white/80 backdrop-blur-md border-b border-zinc-200 py-3 shadow-sm' : 'bg-transparent py-6'
         }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
             <Logo />
             
-            <div className="flex items-center gap-6 sm:gap-8">
+            <div className="flex items-center gap-4">
                 <LanguageToggle language={language} setLanguage={setLanguage} />
-                <button className="hidden sm:flex items-center justify-center w-12 h-12 rounded-full border border-gray-200 hover:bg-[#101010] hover:text-white hover:border-[#101010] transition-all duration-300 group">
-                    <svg className="w-5 h-5 group-hover:rotate-90 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+                
+                <a 
+                    href="#contact" 
+                    className="hidden sm:inline-flex items-center justify-center h-10 w-10 rounded-full border border-zinc-200 bg-white text-zinc-900 hover:bg-zinc-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#006C35]"
+                    aria-label="Contact Us"
+                >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
-                </button>
+                </a>
             </div>
         </div>
       </div>

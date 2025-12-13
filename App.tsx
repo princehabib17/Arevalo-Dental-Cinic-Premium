@@ -4,6 +4,7 @@ import type { Language } from './types';
 import { content } from './constants';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import TrustMarquee from './components/TrustMarquee';
 import Services from './components/Services';
 import ClientStories from './components/ClientStories';
 import Team from './components/Team';
@@ -24,10 +25,11 @@ const App: React.FC = () => {
   const whatsappLink = `https://wa.me/639189103146?text=${encodeURIComponent(currentContent.whatsappPrefill)}`;
 
   return (
-    <div className="bg-[#F8F8F6] text-[#101010] antialiased font-sans">
+    <div className="bg-white text-zinc-950 antialiased font-sans selection:bg-[#006C35] selection:text-white">
       <Header language={language} setLanguage={setLanguage} />
-      <main>
+      <main className="flex flex-col w-full">
         <Hero content={currentContent.hero} whatsappLink={whatsappLink} />
+        <TrustMarquee content={currentContent.trustMarquee} />
         <Services content={currentContent.services} />
         <ClientStories content={currentContent.clientStories} />
         <Team content={currentContent.team} />

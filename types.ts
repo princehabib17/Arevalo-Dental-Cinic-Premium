@@ -6,16 +6,18 @@ export interface HeroContent {
   h1: string;
   subhead: string;
   primaryCTA: string;
-  secondaryCTA: string;
+  secondaryCTA?: string; // Made optional as new copy only has one button
 }
 
 export interface TrustMarqueeContent {
   line: string;
+  logos: string[];
 }
 
 export interface Service {
   title: string;
   description: string;
+  icon: string;
 }
 
 export interface ServicesContent {
@@ -57,6 +59,7 @@ export interface FAQContent {
 
 export interface FinalCTAContent {
   line: string;
+  body: string;
   button: string;
 }
 
@@ -73,9 +76,16 @@ export interface Doctor {
     image: string;
 }
 
+export interface Stat {
+    label: string;
+    value: string;
+}
+
 export interface TeamContent {
     title: string;
+    subhead: string;
     doctors: Doctor[];
+    stats: Stat[];
 }
 
 export interface AppContent {

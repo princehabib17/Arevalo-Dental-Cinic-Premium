@@ -9,95 +9,69 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ content, whatsappLink }) => {
   return (
-    <section className="relative w-full min-h-screen flex items-center pt-20 overflow-hidden bg-[#F8F8F6]">
-      {/* Dynamic Background Mesh */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
-         <div className="absolute -top-[20%] -right-[10%] w-[80vw] h-[80vw] bg-gradient-to-b from-[#D8E6EA] to-transparent rounded-full blur-3xl opacity-60 mix-blend-multiply animate-pulse" style={{ animationDuration: '8s' }}></div>
-         <div className="absolute top-[20%] -left-[10%] w-[60vw] h-[60vw] bg-gradient-to-tr from-[#E6F4F1] to-transparent rounded-full blur-3xl opacity-60 mix-blend-multiply"></div>
+    <section className="relative w-full h-screen min-h-[800px] flex items-center justify-center overflow-hidden bg-zinc-50">
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover scale-105"
+          >
+            <source src="https://res.cloudinary.com/deulmakpv/video/upload/v1762143355/wmremove-transformed_deo0ga.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-white/20 backdrop-blur-[2px]"></div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10 w-full mt-16">
+         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
             
-            {/* Left Content */}
-            <div className="lg:col-span-7 flex flex-col gap-8 order-2 lg:order-1 pt-10 lg:pt-0">
-                <div className="animate-enter">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#006C35]/20 bg-[#006C35]/5 text-[#006C35] text-xs font-bold tracking-widest uppercase mb-6">
-                        <span className="w-2 h-2 rounded-full bg-[#006C35] animate-pulse"></span>
+            {/* Glass Card - Shadcn Style */}
+            <div className="animate-enter w-full md:w-[60%] lg:w-[55%] bg-white/75 backdrop-blur-2xl p-8 sm:p-12 rounded-[2rem] border border-white/50 shadow-sm ring-1 ring-zinc-900/5">
+                
+                <div className="flex items-center gap-3 mb-8">
+                    <span className="flex h-2.5 w-2.5 relative">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#006C35] opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#006C35]"></span>
+                    </span>
+                    <span className="text-[#006C35] text-xs font-bold tracking-[0.2em] uppercase font-sans">
                         {content.eyebrow}
-                    </div>
-                    <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] text-[#101010] tracking-tight">
-                        {content.h1.split(' ').map((word, i) => (
-                            <span key={i} className="inline-block mr-3 lg:mr-4">{word}</span>
-                        ))}
-                    </h1>
+                    </span>
                 </div>
 
-                <p className="text-xl text-gray-600 max-w-lg leading-relaxed animate-enter delay-200">
+                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-medium tracking-tight text-zinc-950 mb-8 leading-[1.1]">
+                    {content.h1}
+                </h1>
+
+                <p className="text-lg sm:text-xl text-zinc-600 leading-relaxed mb-10 font-light border-l-2 border-[#006C35]/30 pl-6">
                     {content.subhead}
                 </p>
 
-                <div className="flex flex-wrap items-center gap-4 animate-enter delay-300">
+                <div className="flex flex-col sm:flex-row items-center gap-4">
+                     {/* Primary Button */}
                      <a 
                        href={whatsappLink}
-                       className="group relative px-8 py-4 bg-[#101010] text-white rounded-full font-bold overflow-hidden transition-transform active:scale-95"
+                       className="w-full sm:w-auto h-12 px-8 inline-flex items-center justify-center gap-2 rounded-full bg-[#006C35] text-white font-semibold text-sm transition-colors hover:bg-[#005028] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-[#006C35] focus-visible:ring-offset-2 shadow-sm"
                      >
-                        <div className="absolute inset-0 bg-[#333] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
-                        <span className="relative z-10 flex items-center gap-2">
-                            {content.primaryCTA}
-                            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                        </span>
+                        {content.primaryCTA}
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                      </a>
                      
-                     <a href="#services" className="px-8 py-4 bg-white border border-gray-200 text-[#101010] rounded-full font-bold hover:bg-gray-50 transition-colors">
-                        {content.secondaryCTA}
-                     </a>
-                </div>
-                
-                {/* Stats / Trust indicators */}
-                <div className="flex items-center gap-8 pt-8 animate-enter delay-500 border-t border-black/5 mt-4">
-                    <div>
-                        <p className="text-3xl font-bold text-[#101010]">30+</p>
-                        <p className="text-sm text-gray-500 uppercase tracking-wider font-semibold">Years Exp.</p>
-                    </div>
-                    <div className="w-px h-10 bg-gray-200"></div>
-                    <div>
-                        <p className="text-3xl font-bold text-[#101010]">5k+</p>
-                        <p className="text-sm text-gray-500 uppercase tracking-wider font-semibold">Patients</p>
-                    </div>
+                     {/* Secondary Button */}
+                     {content.secondaryCTA && (
+                        <a href="#services" className="w-full sm:w-auto h-12 px-8 inline-flex items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-950 font-medium text-sm hover:bg-zinc-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-950 focus-visible:ring-offset-2">
+                            {content.secondaryCTA}
+                        </a>
+                     )}
                 </div>
             </div>
 
-            {/* Right Image */}
-            <div className="lg:col-span-5 order-1 lg:order-2 animate-enter delay-200">
-                 <div className="relative rounded-[2rem] overflow-hidden shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-700 ease-out will-change-transform group">
-                     <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors z-10"></div>
-                     <img 
-                        src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2068&auto=format&fit=crop" 
-                        alt="Modern Dental Chair" 
-                        className="w-full h-[500px] lg:h-[700px] object-cover scale-105 group-hover:scale-100 transition-transform duration-700"
-                     />
-                     
-                     {/* Floating Badge */}
-                     <div className="absolute bottom-8 left-8 right-8 z-20 bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-lg border border-white/50">
-                        <div className="flex items-center gap-4">
-                            <div className="flex -space-x-3">
-                                {[1,2,3].map(i => (
-                                    <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-200 overflow-hidden">
-                                        <img src={`https://ui-avatars.com/api/?name=User+${i}&background=random`} alt="Client" />
-                                    </div>
-                                ))}
-                            </div>
-                            <div>
-                                <p className="text-sm font-bold text-[#101010]">Trusted by GCC Patients</p>
-                                <div className="flex text-yellow-500 text-xs">★★★★★</div>
-                            </div>
-                        </div>
-                     </div>
-                 </div>
-            </div>
-        </div>
+            <div className="hidden md:block w-full md:w-[40%]"></div>
+         </div>
       </div>
+      
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-zinc-50 to-transparent"></div>
     </section>
   );
 };

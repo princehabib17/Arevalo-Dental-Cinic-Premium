@@ -1,161 +1,181 @@
 
 import type { AppContent, Language } from './types';
 
+const logos = [
+  'https://res.cloudinary.com/deulmakpv/image/upload/v1761773490/download-1_tqryii.png',
+  'https://res.cloudinary.com/deulmakpv/image/upload/v1761773490/hmo-valucare_1_tfypyv.png',
+  'https://res.cloudinary.com/deulmakpv/image/upload/v1761773489/download_fj7mln.png',
+  'https://res.cloudinary.com/deulmakpv/image/upload/v1761773489/download_2_iy0w6b.png',
+  'https://res.cloudinary.com/deulmakpv/image/upload/v1761773489/download_6_jqmmrh.png',
+  'https://res.cloudinary.com/deulmakpv/image/upload/v1761773489/hmo-intellicare_1_gzm9hs.png',
+  'https://res.cloudinary.com/deulmakpv/image/upload/v1761773489/download_4_u2yozv.png',
+];
+
 const contentData: Record<Language, AppContent> = {
   en: {
-    whatsappPrefill: "Hi Arevalo Clinic, I’m interested in your services.",
+    whatsappPrefill: "Hi Arevalo Clinic, I’d like to book an appointment.",
     hero: {
-      eyebrow: "Dental Clinic",
-      h1: "WE OFFER AFFORDABLE, QUALITY IMPLANT AND COSMETIC DENTISTRY SERVICES IN OUR CLINIC",
-      subhead: "Trusted by patients from Riyadh, Doha, and Dubai. Global standards with Filipino warmth.",
-      primaryCTA: "Book Appointment",
-      secondaryCTA: "View Services",
+      eyebrow: "Dental Excellence",
+      h1: "Welcome to Arevalo Dental Clinic",
+      subhead: "Smile without second-guessing photos, meetings, or first impressions. Get clear options and confident results in Makati, without the stress of overcomplicated treatment plans.",
+      primaryCTA: "Book an Appointment",
     },
     trustMarquee: {
-      line: "Partnered with clinics and dental brands trusted across the Gulf and Asia.",
+      line: "Trusted by Major Insurance & Health Partners",
+      logos: logos
     },
     services: {
         title: "Services We Do Best",
         services: [
-            { title: "Dental Bridge", description: "A dental bridge replaces missing teeth with artificial teeth." },
-            { title: "Dental Implant", description: "Dental implants are artificial tooth roots." },
-            { title: "Whitening", description: "Removes stains and discoloration from teeth." },
-            { title: "Veneers", description: "Thin shells of porcelain tailored to cover teeth." },
-            { title: "Dental Crown", description: "A cap placed over a tooth to restore shape." },
-            { title: "Inlay/Onlay", description: "Indirect fillings for decayed or damaged teeth." },
-            { title: "Oral Surgery", description: "Procedures including extractions and implants." },
-            { title: "Orthodontics", description: "Correction of malpositioned teeth and jaws." },
-            { title: "Bonding", description: "Application of tooth-colored resin material." },
-            { title: "Periodontics", description: "Prevention, diagnosis, and treatment of periodontal disease." },
-            { title: "Dentures", description: "Removable replacement for missing teeth." },
-            { title: "Root Canal", description: "Treatment for the infected pulp of a tooth." },
+            { title: "Dental Bridge", description: "Replace missing teeth with a fixed solution that feels natural when you chew and speak. Designed to close gaps cleanly and keep your bite comfortable.", icon: "https://res.cloudinary.com/deulmakpv/image/upload/v1765581527/Bridge_i7yjiv.png" },
+            { title: "Dental Implant", description: "A stable replacement that looks and functions like a real tooth. No slipping, no awkwardness, just a secure result built for everyday life.", icon: "https://res.cloudinary.com/deulmakpv/image/upload/v1765581528/Implant_cghqzv.png" },
+            { title: "Whitening", description: "Professional whitening that lifts deep stains safely and evenly. You leave with a brighter smile that still looks like you.", icon: "https://res.cloudinary.com/deulmakpv/image/upload/v1765581528/Whitening_bmkdwd.png" },
+            { title: "Veneers", description: "Refine the look of your front teeth with a clean, natural finish. Great for chips, uneven edges, discoloration, and small gaps.", icon: "https://res.cloudinary.com/deulmakpv/image/upload/v1765581526/Veneer_hsq2q2.png" },
+            { title: "Dental Crown", description: "Protect and restore a weakened or cracked tooth without losing it. Strong, functional, and shaped to blend with your smile.", icon: "https://res.cloudinary.com/deulmakpv/image/upload/v1765581526/Crown_luqh4c.png" },
+            { title: "Inlay/Onlay", description: "A conservative upgrade when a filling is not enough, but a crown is too much. Custom-fit for strength and comfort.", icon: "https://res.cloudinary.com/deulmakpv/image/upload/v1765581526/Inlay_q7okek.png" },
+            { title: "Oral Surgery", description: "Extractions and wisdom tooth procedures done under local anesthesia with a clear after-care plan. Straightforward, controlled, and focused on smooth recovery.", icon: "https://res.cloudinary.com/deulmakpv/image/upload/v1765581527/Surgery_n4iy3i.png" },
+            { title: "Orthodontics", description: "Straightening options that fit adult life, including discreet clear aligners. Comfort, progress, and a smile that feels more like you.", icon: "https://res.cloudinary.com/deulmakpv/image/upload/v1765581527/Braces_nxpiv2.png" },
+            { title: "Bonding", description: "A quick cosmetic fix for small chips and minor gaps. Natural-looking, polished, and often done in one visit.", icon: "https://res.cloudinary.com/deulmakpv/image/upload/v1765581527/Bonding_budxsg.png" },
+            { title: "Periodontics", description: "Gum care that protects your teeth long-term. Treatment focuses on reducing inflammation and keeping the foundation healthy.", icon: "https://res.cloudinary.com/deulmakpv/image/upload/v1765581526/Periodontics_odywqu.png" },
+            { title: "Dentures", description: "Custom-fit dentures made for comfort, stability, and a natural look. Built to help you eat, speak, and smile with ease.", icon: "https://res.cloudinary.com/deulmakpv/image/upload/v1765581526/Denture_desp9j.png" },
+            { title: "Root Canal", description: "Relieves pain and saves the tooth by treating the infection at the source. Done with proper anesthesia and a calm, step-by-step approach.", icon: "https://res.cloudinary.com/deulmakpv/image/upload/v1765581527/Root_Canal_mbcne5.png" },
         ]
     },
     clientStories: {
-        title: "Our Valuable Clients",
+        title: "Client Stories",
         stories: [
-            { text: "I was scared of surgery. Now I smile in every photo.", author: "Thomas Daniel", rating: 5 },
-            { text: "Whitening lifted four shades with zero sensitivity.", author: "Alena Alex", rating: 5 },
-            { text: "Aligners were discreet and fast. Colleagues noticed.", author: "Thomas Edison", rating: 5 },
+            { text: "I used to smile with my lips closed. After my treatment, I stopped thinking about angles and lighting. Now I show up in photos without hesitation.", author: "Fatima, Bahrain", rating: 5 },
+            { text: "I wanted a clinic that was clear and direct. The plan made sense, the pricing was transparent, and the results feel solid and natural. I’d do it again.", author: "Abdullah, Saudi Arabia", rating: 5 },
+            { text: "I didn’t realize how much my teeth affected my confidence until that weight was gone. I speak more freely now, and I smile without checking myself first.", author: "Maria, Manila", rating: 5 },
         ],
-        cta: "View all stories"
+        cta: "Read more reviews"
     },
     team: {
         title: "30 Years of Excellence",
+        subhead: "Led by Dr. Daisy Miranda-Arevalo, our clinic is known for consistent care, clear planning, and natural-looking results. We’ve served patients in Makati for decades, including many visiting from the Gulf region.",
         doctors: [
-            { name: "Dr. Caroline Mercedes-Arevalo", role: "Assistant Dentist", image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=1740&auto=format&fit=crop" },
-            { name: "Dr. Daisy Heneda Arevalo", role: "Head Dentist", image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=1974&auto=format&fit=crop" },
-            { name: "Dr. Shiela Tiongson", role: "Assistant Dentist", image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1964&auto=format&fit=crop" },
+            { name: "Dr. Daisy Miranda-Arevalo", role: "Head Dentist", image: "https://res.cloudinary.com/deulmakpv/image/upload/v1761673223/image_39_omikz6.png" },
+            { name: "Dr. Caroline Verceles-Arevalo", role: "Associate Dentist", image: "https://res.cloudinary.com/deulmakpv/image/upload/v1762162894/image_38_fuk03m.png" },
+            { name: "Dr. Eliosa Tiongson", role: "Associate Dentist", image: "https://res.cloudinary.com/deulmakpv/image/upload/v1762162897/image_37_etr3h3.png" },
+        ],
+        stats: [
+            { label: "Gulf Smiles", value: "26+" },
+            { label: "International Patients", value: "71+" }
         ]
     },
     journey: {
-        title: "Journey to Your Smile",
+        title: "Here’s What We’ll Do Next",
         steps: [
-            { title: "Book Appointment", description: "To book your first virtual consultation, we help you guide through the checker process." },
-            { title: "Consultation", description: "You will be welcomed by the receptionist, who will guide you through the registration process." },
-            { title: "Set Dental Plan", description: "Following your dental consultation, you will drive to go over your customized treatment plan." },
-            { title: "Dental Procedure", description: "After the dental plan is understood by the patient, the next step is to schedule the treatment." },
-            { title: "Follow up Care", description: "You'll get clear instructions on what to eat and how to maintain the result if you ever need us." },
+            { title: "Confirm your schedule", description: "You choose a time. We confirm your appointment within 24 hours." },
+            { title: "Assess and listen", description: "We check what’s going on, what you want to change, and what matters most to you." },
+            { title: "Map the plan", description: "You get clear options and transparent pricing, aligned with your timeline." },
+            { title: "Start treatment", description: "We handle the work step-by-step, keeping things calm and predictable." },
+            { title: "Follow through", description: "We monitor healing and results, and make sure everything settles the way it should." },
         ],
-        cta: "Plan my visit"
+        cta: "Start Your Journey"
     },
     faq: {
-        title: "Frequently Asked Questions",
+        title: "Good to Know",
         faqs: [
-            { question: "What services do you offer?", answer: "We offer a range of healthcare services including Personal Health Consultations, Health Monitoring Programs, and Integrated Care Plans." },
-            { question: "How do I book an appointment?", answer: "You can book directly via WhatsApp or our contact form." },
-            { question: "What can I expect during my first visit?", answer: "A comprehensive exam, X-rays if needed, and a clear treatment plan." },
-            { question: "How does the Health Monitoring Program work?", answer: "We track your dental health over time with regular checkups and digital logs." },
-            { question: "What is an Integrated Care Plan?", answer: "A holistic approach combining hygiene, restoration, and aesthetics." },
+            { question: "HMO coverage", answer: "Medicard, Intellicare, Valuecare, and many major Philippine HMO providers are accepted." },
+            { question: "For patients flying in", answer: "Treatment can be planned around your travel dates, and we’ll outline a realistic timeline before you book anything." },
+            { question: "Clinic location", answer: "We’re in Medical Towers Makati, in the CBD, with easy access by car, Grab, and public transport." },
+            { question: "Emergency care", answer: "Urgent cases are prioritized and scheduled as soon as possible." },
         ]
     },
     finalCTA: {
-        line: "Get Our Updates",
-        button: "Submit"
+        line: "You’re Still Here?",
+        body: "If you’ve made it this far, you’re probably one message away from being done with this problem. Send us a WhatsApp message and we’ll reply with the next step.",
+        button: "Message Us on WhatsApp"
     },
     footer: {
         tagline: "Dentistry that feels human.",
-        privacy: "Privacy",
-        terms: "Terms",
-        location: "Location",
+        privacy: "Privacy Policy",
+        terms: "Terms of Service",
+        location: "Manila, Philippines",
     }
   },
   ar: {
-    whatsappPrefill: "مرحباً عيادة أريفالو، أنا مهتم بخدماتكم.",
+    whatsappPrefill: "مرحباً عيادة أريفالو، أرغب في حجز موعد.",
     hero: {
-      eyebrow: "عيادة أسنان",
-      h1: "نقدم خدمات زراعة وتجميل أسنان عالية الجودة وبأسعار معقولة",
-      subhead: "ناس كثير من الرياض والدوحة ودبي يثقون فينا. معايير عالمية بدفء فلبيني.",
-      primaryCTA: "احجز موعدك",
-      secondaryCTA: "عرض الخدمات",
+      eyebrow: "التميز في طب الأسنان",
+      h1: "مرحباً بك في عيادة أريفالو لطب الأسنان",
+      subhead: "ابتسامة مريحة من دون تردد في الصور أو الكلام. خطة واضحة ونتائج طبيعية في ماكاتي، بأسلوب هادئ وخطوات مفهومة.",
+      primaryCTA: "احجز موعد",
     },
     trustMarquee: {
-      line: "شركاء النجاح في الخليج وآسيا",
+      line: "موثوق به من قبل كبرى شركات التأمين والشركاء الصحيين",
+      logos: logos
     },
     services: {
-        title: "أفضل خدماتنا",
+        title: "الخدمات التي نتميز بها",
         services: [
-            { title: "جسور الأسنان", description: "استبدال الأسنان المفقودة بجسور ثابتة وطبيعية." },
-            { title: "زراعة الأسنان", description: "جذور صناعية من التيتانيوم تعوض الأسنان المفقودة." },
-            { title: "تبييض الأسنان", description: "إزالة التصبغات والبقع للحصول على ابتسامة مشرقة." },
-            { title: "الفينير (القشور)", description: "قشور خزفية رقيقة لتجميل شكل ولون الأسنان." },
-            { title: "تيجان الأسنان", description: "غطاء كامل للسن لترميم الشكل والوظيفة." },
-            { title: "الحشوات", description: "حشوات تجميلية للأسنان المتضررة أو المسوسة." },
-            { title: "جراحة الفم", description: "إجراءات تشمل الخلع والزراعة وغيرها." },
-            { title: "تقويم الأسنان", description: "تصحيح تموضع الأسنان والفكين." },
-            { title: "الترابط (Bonding)", description: "تطبيق مادة الراتنج بلون الأسنان للإصلاح." },
-            { title: "علاج اللثة", description: "الوقاية والتشخيص وعلاج أمراض اللثة." },
-            { title: "أطقم الأسنان", description: "بدائل متحركة للأسنان المفقودة." },
-            { title: "علاج الجذور", description: "علاج عصب السن المصاب أو الملتهب." },
+            { title: "جسر", description: "تعويض ثابت لإغلاق فراغ الأسنان المفقودة وتحسين المضغ والكلام. مصمم ليبدو طبيعياً ويحافظ على توازن العضّة.", icon: "https://res.cloudinary.com/deulmakpv/image/upload/v1765581527/Bridge_i7yjiv.png" },
+            { title: "زراعة", description: "تعويض ثابت يشبه السن الطبيعي في الشكل والوظيفة. يساعد على استعادة الراحة والثبات والابتسامة بثقة.", icon: "https://res.cloudinary.com/deulmakpv/image/upload/v1765581528/Implant_cghqzv.png" },
+            { title: "تبييض", description: "تبييض احترافي يرفع التصبغات بشكل متجانس وآمن. يمنحك ابتسامة أفتح مع مظهر نظيف وغير مبالغ فيه.", icon: "https://res.cloudinary.com/deulmakpv/image/upload/v1765581528/Whitening_bmkdwd.png" },
+            { title: "ابتسامة هوليوود", description: "تحسين شامل لمظهر الأسنان الأمامية للحصول على ابتسامة متناسقة وواضحة. نركز على نتيجة أنيقة وطبيعية تناسب ملامح الوجه.", icon: "https://res.cloudinary.com/deulmakpv/image/upload/v1765581526/Veneer_hsq2q2.png" },
+            { title: "تلبيسة", description: "تلبيسة تحمي السن الضعيف أو المتشقق وتعيد شكله ووظيفته. مصممة لتتناسق مع لون الأسنان وتبدو طبيعية.", icon: "https://res.cloudinary.com/deulmakpv/image/upload/v1765581526/Crown_luqh4c.png" },
+            { title: "حشوة سراميك", description: "حشوة خزفية (سيراميك) متينة ومطابقة للون السن. خيار ممتاز عندما تحتاج تقوية للسن مع شكل طبيعي.", icon: "https://res.cloudinary.com/deulmakpv/image/upload/v1765581526/Inlay_q7okek.png" },
+            { title: "جراحة", description: "إجراءات مثل خلع الأسنان أو ضروس العقل تتم تحت التخدير الموضعي مع خطة تعافٍ واضحة. تجربة مرتبة تركز على شفاء سلس.", icon: "https://res.cloudinary.com/deulmakpv/image/upload/v1765581527/Surgery_n4iy3i.png" },
+            { title: "تقويم", description: "خيارات لتعديل اصطفاف الأسنان وتحسين العضّة، بما يناسب نمط حياتك. نتائج تدريجية مع متابعة منظمة وراحة أعلى.", icon: "https://res.cloudinary.com/deulmakpv/image/upload/v1765581527/Braces_nxpiv2.png" },
+            { title: "حشوة تجميلية", description: "إصلاح بسيط وعملي لكسور صغيرة أو فراغات خفيفة أو حواف غير متساوية. النتيجة تبدو طبيعية وتندمج مع لون الأسنان.", icon: "https://res.cloudinary.com/deulmakpv/image/upload/v1765581527/Bonding_budxsg.png" },
+            { title: "علاج لثة", description: "عناية تحمي أساس الأسنان على المدى الطويل. يقلل الالتهاب والنزيف ويساعد على الحفاظ على صحة اللثة والدعم العظمي.", icon: "https://res.cloudinary.com/deulmakpv/image/upload/v1765581526/Periodontics_odywqu.png" },
+            { title: "طقم أسنان", description: "طقم مصمم على مقاس فمك ليكون مريحاً وثابتاً قدر الإمكان. يساعدك على الأكل والتحدث بثقة وبمظهر طبيعي.", icon: "https://res.cloudinary.com/deulmakpv/image/upload/v1765581526/Denture_desp9j.png" },
+            { title: "سحب عصب", description: "يعالج الالتهاب داخل السن ويخفف الألم مع الحفاظ على السن قدر الإمكان. يتم بخطوات واضحة وتخدير مناسب لراحة أكبر.", icon: "https://res.cloudinary.com/deulmakpv/image/upload/v1765581527/Root_Canal_mbcne5.png" },
         ]
     },
     clientStories: {
-        title: "عملاؤنا الأعزاء",
+        title: "قصص من عملائنا",
         stories: [
-            { text: "كنت خايف من العملية... الحين أبتسم بكل صورة.", author: "طارق — قطر", rating: 5 },
-            { text: "تبييض رفع ٤ درجات... ولا فيه تحسّس.", author: "عائشة — الرياض", rating: 5 },
-            { text: "الألينرز كانت خفيفة وسريعة... والزملاء لاحظوا.", author: "فيصل — جدة", rating: 5 },
+            { text: "كنت أتردد في الابتسام في الصور. بعد العلاج أصبحت أبتسم بعفوية من دون أن أفكر في زوايا أو إضاءة.", author: "فاطمة، البحرين", rating: 5 },
+            { text: "كنت أريد خطة واضحة وتعامل مباشر. كل شيء كان مفهوماً والتكلفة كانت شفافة، والنتيجة ثابتة وطبيعية.", author: "عبدالله، السعودية", rating: 5 },
+            { text: "لم أدرك كم كان هذا الأمر يؤثر عليّ حتى اختفى. الآن أتحدث وأبتسم براحة أكبر، من دون تردد.", author: "ماريا، مانيلا", rating: 5 },
         ],
         cta: "شاهد المزيد"
     },
     team: {
-        title: "٣٠ عاماً من التميز",
+        title: "30 عاماً من التميز",
+        subhead: "بقيادة د. ديزي ميراندا-أريفالو، نركز على رعاية ثابتة وخطط واضحة ونتائج طبيعية. نخدم مرضى من ماكاتي منذ سنوات طويلة، وبينهم كثيرون من منطقة الخليج.",
         doctors: [
-            { name: "د. كارولين مرسيدس", role: "طبيب مساعد", image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=1740&auto=format&fit=crop" },
-            { name: "د. ديزي هينيدا أريفالو", role: "رئيس الأطباء", image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=1974&auto=format&fit=crop" },
-            { name: "د. شيلا تيونغسون", role: "طبيب مساعد", image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1964&auto=format&fit=crop" },
+            { name: "د. ديزي ميراندا-أريفالو", role: "طبيبة الأسنان الرئيسية", image: "https://res.cloudinary.com/deulmakpv/image/upload/v1761673223/image_39_omikz6.png" },
+            { name: "د. كارولين فيرسيليس-أريفالو", role: "طبيبة أسنان مساعدة", image: "https://res.cloudinary.com/deulmakpv/image/upload/v1762162894/image_38_fuk03m.png" },
+            { name: "د. إليوسا تيونغسون", role: "طبيبة أسنان مساعدة", image: "https://res.cloudinary.com/deulmakpv/image/upload/v1762162897/image_37_etr3h3.png" },
+        ],
+        stats: [
+            { label: "ابتسامة خليجية", value: "26+" },
+            { label: "ابتسامة حول العالم", value: "71+" }
         ]
     },
     journey: {
-        title: "رحلتك لابتسامة أفضل",
+        title: "الخطوة القادمة ببساطة",
         steps: [
-            { title: "حجز موعد", description: "لحجز استشارتك الأولى، سنرشدك خلال العملية." },
-            { title: "الاستشارة", description: "سيستقبلك موظف الاستقبال ويرشدك خلال التسجيل." },
-            { title: "خطة العلاج", description: "بعد الاستشارة، سنضع لك خطة علاج مخصصة." },
-            { title: "الإجراء الطبي", description: "بعد فهم الخطة، سنبدأ في تحديد مواعيد العلاج." },
-            { title: "المتابعة", description: "سنعطيك تعليمات واضحة للحفاظ على النتيجة." },
+            { title: "تأكيد الموعد", description: "تختار الوقت، ونحن نؤكد خلال 24 ساعة." },
+            { title: "فحص واستماع", description: "نفهم المشكلة وما الذي تريد تغييره، ثم نوضح الصورة كاملة." },
+            { title: "خطة واضحة", description: "خيارات عملية وتسعير شفاف يناسب وقتك وميزانيتك." },
+            { title: "بدء العلاج", description: "نبدأ خطوة بخطوة، بهدوء وبشكل متوقع." },
+            { title: "متابعة النتائج", description: "نراجع الشفاء والنتيجة ونتأكد أن كل شيء يسير كما يجب." },
         ],
-        cta: "خطط لزيارتي"
+        cta: "ابدأ رحلتك"
     },
     faq: {
-        title: "أسئلة شائعة",
+        title: "معلومات مهمة",
         faqs: [
-            { question: "ما هي الخدمات التي تقدمونها؟", answer: "نقدم مجموعة واسعة تشمل الاستشارات الشخصية وبرامج المتابعة الصحية." },
-            { question: "كيف أحجز موعد؟", answer: "يمكنك الحجز مباشرة عبر واتساب." },
-            { question: "ماذا أتوقع في زيارتي الأولى؟", answer: "فحص شامل، أشعة إذا لزم الأمر، وخطة علاج واضحة." },
-            { question: "كيف يعمل برنامج المتابعة الصحية؟", answer: "نتابع صحة أسنانك بمرور الوقت مع فحوصات منتظمة." },
-            { question: "ما هي خطة الرعاية المتكاملة؟", answer: "نهج شامل يجمع بين النظافة والترميم والتجميل." },
+            { question: "التأمين الصحي", answer: "نقبل ميديكارد وإنتليكير وفاليوكير والعديد من مزودي التأمين الصحي في الفلبين." },
+            { question: "للقادمين من الخارج", answer: "يمكن ترتيب خطة علاج حسب تواريخ السفر، مع جدول واضح قبل الحجز." },
+            { question: "الموقع", answer: "نحن في Medical Towers Makati داخل منطقة الأعمال، مع وصول سهل بالسيارة وGrab والمواصلات." },
+            { question: "الحالات العاجلة", answer: "نعطي الأولوية للحالات الطارئة ونحدد الموعد في أقرب وقت." },
         ]
     },
     finalCTA: {
-        line: "احصل على التحديثات",
-        button: "اشتراك"
+        line: "لا تزال تقرأ؟",
+        body: "إذا وصلت إلى هنا، فأنت على بُعد رسالة واحدة من الخطوة التالية. راسلنا على واتساب وسنرد عليك بما تحتاجه مباشرة.",
+        button: "راسلنا على واتساب"
     },
     footer: {
         tagline: "طب أسنان بروح إنسانية.",
-        privacy: "الخصوصية",
-        terms: "الشروط",
-        location: "الموقع",
+        privacy: "سياسة الخصوصية",
+        terms: "شروط الخدمة",
+        location: "مانيلا، الفلبين",
     }
   }
 };

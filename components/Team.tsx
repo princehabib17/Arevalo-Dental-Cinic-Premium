@@ -8,33 +8,46 @@ interface TeamProps {
 
 const Team: React.FC<TeamProps> = ({ content }) => {
     return (
-        <section className="bg-white py-32">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col items-center text-center mb-20">
-                    <span className="text-[#006C35] font-bold tracking-widest text-sm uppercase mb-3">Our Experts</span>
-                    <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#101010]">
+        <section className="bg-white py-24 relative border-t border-zinc-100">
+             <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-zinc-50 to-transparent pointer-events-none"></div>
+
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+                <div className="flex flex-col items-center text-center mb-16">
+                    <h2 className="text-4xl sm:text-5xl font-medium tracking-tight text-zinc-950 mb-6">
                         {content.title}
                     </h2>
+                    <p className="max-w-2xl text-lg text-zinc-500 font-light leading-relaxed">
+                        {content.subhead}
+                    </p>
+                    
+                    {/* Stats Display */}
+                    <div className="grid grid-cols-2 gap-8 mt-12 w-full max-w-lg">
+                        {content.stats && content.stats.map((stat, idx) => (
+                            <div key={idx} className="bg-white rounded-xl p-6 border border-zinc-200 shadow-sm flex flex-col items-center">
+                                <div className="text-3xl font-bold text-[#006C35] mb-1">{stat.value}</div>
+                                <div className="text-xs font-bold uppercase tracking-widest text-zinc-400">{stat.label}</div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
                     {content.doctors.map((doctor, index) => (
-                        <div key={index} className="group cursor-pointer">
-                            <div className="w-full aspect-[3/4] overflow-hidden rounded-2xl bg-[#F0F0F0] mb-6 relative shadow-lg">
+                        <div key={index} className="group cursor-pointer flex flex-col items-center">
+                            <div className="w-full aspect-[3/4] overflow-hidden rounded-2xl bg-zinc-100 mb-6 relative shadow-sm border border-zinc-100 group-hover:shadow-md transition-all duration-300">
+                                {/* Doctor Image */}
                                 <img 
                                     src={doctor.image} 
                                     alt={doctor.name} 
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                                     <p className="text-white font-medium transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">
-                                        Specializing in cosmetic and restorative dentistry.
-                                     </p>
-                                </div>
+                                
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </div>
-                            <div className="text-center group-hover:-translate-y-2 transition-transform duration-300">
-                                <h3 className="text-2xl font-bold text-[#101010]">{doctor.name}</h3>
-                                <p className="text-[#006C35] font-semibold mt-1 uppercase text-sm tracking-wider">{doctor.role}</p>
+                            
+                            <div className="text-center">
+                                <h3 className="text-lg font-bold text-zinc-950 mb-1">{doctor.name}</h3>
+                                <p className="text-[#006C35] font-medium text-sm uppercase tracking-wide opacity-80">{doctor.role}</p>
                             </div>
                         </div>
                     ))}
