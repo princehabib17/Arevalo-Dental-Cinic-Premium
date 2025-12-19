@@ -26,7 +26,7 @@ const App: React.FC = () => {
   const whatsappLink = `https://wa.me/639189103146?text=${encodeURIComponent(currentContent.whatsappPrefill)}`;
 
   return (
-    <div className="bg-premium text-zinc-950 antialiased font-sans selection:bg-[#006C35] selection:text-white">
+    <div className="bg-premium lux-noise text-zinc-50 antialiased font-sans selection:bg-[#006C35] selection:text-white">
       <Header language={language} setLanguage={setLanguage} />
       <main className="flex flex-col w-full">
         <Hero content={currentContent.hero} whatsappLink={whatsappLink} />

@@ -68,9 +68,10 @@
       /* Premium surfaces + section backgrounds (2026-style) */
       .bg-premium {
         background:
-          radial-gradient(1200px 700px at 10% -10%, rgba(0, 108, 53, 0.10), transparent 55%),
-          radial-gradient(900px 600px at 90% 10%, rgba(9, 9, 11, 0.06), transparent 60%),
-          linear-gradient(to bottom, #ffffff, #fafafa);
+          radial-gradient(1100px 700px at 20% -10%, rgba(0, 108, 53, 0.22), transparent 58%),
+          radial-gradient(900px 650px at 90% 10%, rgba(255, 255, 255, 0.10), transparent 62%),
+          radial-gradient(800px 600px at 50% 120%, rgba(0, 108, 53, 0.16), transparent 55%),
+          linear-gradient(to bottom, #050506, #0a0a0d 40%, #050506);
       }
       .surface-glass {
         background: rgba(255, 255, 255, 0.72);
@@ -95,6 +96,32 @@
       .mask-fade-x {
         -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
         mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+      }
+
+      /* Subtle luxury noise overlay */
+      .lux-noise {
+        position: relative;
+      }
+      .lux-noise::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.06;
+        mix-blend-mode: overlay;
+        background-image:
+          radial-gradient(circle at 20% 10%, rgba(255,255,255,0.35) 0, transparent 35%),
+          radial-gradient(circle at 80% 30%, rgba(255,255,255,0.20) 0, transparent 40%),
+          radial-gradient(circle at 40% 80%, rgba(255,255,255,0.18) 0, transparent 45%),
+          repeating-radial-gradient(circle at 0 0, rgba(255,255,255,0.22) 0 1px, transparent 1px 3px);
+        background-size: auto, auto, auto, 220px 220px;
+      }
+
+      /* Ensure layered content sits above noise */
+      #root {
+        position: relative;
+        z-index: 1;
       }
 
       /* Direction (RTL) visual fixes */

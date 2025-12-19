@@ -77,7 +77,7 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage }) => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div
           className={`flex items-center justify-between rounded-2xl px-3 sm:px-4 py-3 transition-all duration-300 ${
-            scrolled ? 'surface-glass' : 'bg-transparent'
+            scrolled ? 'surface-glass' : 'surface-glass bg-white/55'
           }`}
         >
             <Logo />
