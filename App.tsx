@@ -10,6 +10,7 @@ import ClientStories from './components/ClientStories';
 import Team from './components/Team';
 import Journey from './components/Journey';
 import FAQ from './components/FAQ';
+import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 import WhatsAppFAB from './components/WhatsAppFAB';
 
@@ -35,6 +36,7 @@ const App: React.FC = () => {
         <Team content={currentContent.team} />
         <Journey content={currentContent.journey} whatsappLink={whatsappLink} />
         <FAQ content={currentContent.faq} />
+        <FinalCTA content={currentContent.finalCTA} whatsappLink={whatsappLink} />
       </main>
       <Footer language={language} setLanguage={setLanguage} content={currentContent.footer} />
       <WhatsAppFAB whatsappLink={whatsappLink} ariaLabel={currentContent.hero.primaryCTA}/>

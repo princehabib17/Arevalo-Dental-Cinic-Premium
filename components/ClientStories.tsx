@@ -24,21 +24,21 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
 
 const StoryCard: React.FC<{ story: Story }> = ({ story }) => {
     return (
-        <div className="bg-white p-8 rounded-2xl border border-zinc-200 shadow-sm flex flex-col justify-between h-full transition-colors hover:border-[#006C35]/30">
+        <div className="surface-glass ring-premium p-7 rounded-3xl flex flex-col justify-between h-full transition-transform duration-300 hover:-translate-y-0.5">
             <div>
                 <StarRating rating={story.rating || 5} />
-                <blockquote className="text-lg text-zinc-600 font-light leading-relaxed mb-6">
+                <blockquote className="text-base sm:text-lg text-zinc-700 leading-relaxed mb-6">
                     "{story.text}"
                 </blockquote>
             </div>
             
-            <div className="flex items-center gap-3 pt-6 border-t border-zinc-100">
-                <div className="h-10 w-10 rounded-full bg-zinc-100 flex items-center justify-center text-[#006C35] font-bold text-sm">
+            <div className="flex items-center gap-3 pt-6 border-t border-zinc-200/60">
+                <div className="h-10 w-10 rounded-full bg-white/70 border border-zinc-200/70 flex items-center justify-center text-[#006C35] font-semibold text-sm ring-premium">
                     {story.author.charAt(0)}
                 </div>
                 <div>
                     <div className="text-sm font-bold text-zinc-950">{story.author}</div>
-                    <div className="text-xs text-zinc-400 font-medium uppercase tracking-wider">Verified Patient</div>
+                    <div className="text-[11px] text-zinc-500 font-semibold uppercase tracking-[0.22em]">Verified patient</div>
                 </div>
             </div>
         </div>
@@ -47,33 +47,51 @@ const StoryCard: React.FC<{ story: Story }> = ({ story }) => {
 
 const ClientStories: React.FC<ClientStoriesProps> = ({ content }) => {
   return (
-    <section className="py-24 bg-zinc-50 border-y border-zinc-100">
+    <section className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-             <div className="max-w-xl">
-                 <span className="text-[#006C35] font-bold tracking-[0.2em] text-xs uppercase mb-3 block">Testimonials</span>
-                 <h2 className="text-3xl md:text-4xl font-medium text-zinc-950 tracking-tight">
-                    {content.title}
-                 </h2>
-             </div>
-             
-             <button className="hidden md:inline-flex items-center gap-2 text-sm font-bold text-zinc-950 hover:text-[#006C35] transition-colors">
-                {content.cta}
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-             </button>
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+          <div className="max-w-xl">
+            <span className="inline-flex items-center gap-2 rounded-full border border-zinc-200/70 bg-white/70 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-zinc-600 ring-premium">
+              <span className="inline-flex h-1.5 w-1.5 rounded-full bg-[#006C35]"></span>
+              Testimonials
+            </span>
+            <h2 className="mt-5 text-3xl sm:text-5xl font-semibold tracking-tight text-zinc-950">
+              {content.title}
+            </h2>
+          </div>
+          <button className="hidden sm:inline-flex items-center gap-2 text-sm font-semibold text-zinc-950 hover:text-[#006C35] transition-colors">
+            {content.cta}
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Mobile-first: scroll-snap carousel */}
+        <div className="mt-10 sm:hidden -mx-4 px-4 overflow-x-auto no-scrollbar mask-fade-x">
+          <div className="flex gap-4 w-max pr-10 snap-x snap-mandatory">
             {content.stories.map((story, index) => (
-                <StoryCard key={index} story={story} />
+              <div key={index} className="snap-start w-[88vw] max-w-[380px]">
+                <StoryCard story={story} />
+              </div>
             ))}
+          </div>
+        </div>
+
+        {/* Desktop: premium grid */}
+        <div className="hidden sm:grid mt-10 grid-cols-3 gap-6">
+          {content.stories.map((story, index) => (
+            <StoryCard key={index} story={story} />
+          ))}
         </div>
         
-        <div className="mt-12 text-center md:hidden">
-             <button className="inline-flex items-center gap-2 text-sm font-bold text-zinc-950 hover:text-[#006C35] transition-colors">
-                {content.cta}
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-             </button>
+        <div className="mt-10 sm:hidden">
+          <button className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-950 hover:text-[#006C35] transition-colors">
+            {content.cta}
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>
