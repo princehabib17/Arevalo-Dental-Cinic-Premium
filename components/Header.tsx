@@ -8,11 +8,11 @@ interface HeaderProps {
 }
 
 const Logo: React.FC = () => (
-    <a href="#" className="flex items-center gap-2 group outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#006C35] rounded-lg px-2 -ml-2">
+    <a href="#" className="flex items-center gap-2 group outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#006C35] rounded-xl px-2 -ml-2">
         <img 
             src="https://res.cloudinary.com/deulmakpv/image/upload/v1761683378/Group_475_hbbgt2.png" 
             alt="Arevalo Dental" 
-            className="h-10 sm:h-12 w-auto object-contain transition-all duration-300 drop-shadow-sm" 
+            className="h-10 sm:h-12 w-auto object-contain transition-all duration-300 drop-shadow-sm opacity-95" 
         />
     </a>
 );
@@ -21,11 +21,11 @@ const LanguageToggle: React.FC<HeaderProps> = ({ language, setLanguage }) => {
     const isEn = language === 'en';
     
     return (
-        <div className="flex items-center bg-white border border-zinc-200 rounded-full p-1 shadow-sm gap-1">
+        <div className="flex items-center bg-white/70 backdrop-blur-md border border-zinc-200/70 rounded-full p-1 shadow-sm gap-1 ring-premium">
             <button
                 onClick={() => setLanguage('en')}
-                className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006C35] ${
-                    isEn ? 'bg-zinc-900 text-white shadow-sm' : 'text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100'
+                className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006C35] ${
+                    isEn ? 'bg-zinc-950 text-white shadow-sm' : 'text-zinc-600 hover:text-zinc-950 hover:bg-white/70'
                 }`}
             >
                 <img 
@@ -40,8 +40,8 @@ const LanguageToggle: React.FC<HeaderProps> = ({ language, setLanguage }) => {
             </button>
             <button
                 onClick={() => setLanguage('ar')}
-                className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006C35] ${
-                    !isEn ? 'bg-[#006C35] text-white shadow-sm' : 'text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100'
+                className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006C35] ${
+                    !isEn ? 'bg-[#006C35] text-white shadow-sm' : 'text-zinc-600 hover:text-zinc-950 hover:bg-white/70'
                 }`}
             >
                 <img 
@@ -71,11 +71,15 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage }) => {
   return (
     <header 
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-            scrolled ? 'bg-white/80 backdrop-blur-md border-b border-zinc-200 py-3 shadow-sm' : 'bg-transparent py-6'
+            scrolled ? 'py-3' : 'py-5'
         }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+        <div
+          className={`flex items-center justify-between rounded-2xl px-3 sm:px-4 py-3 transition-all duration-300 ${
+            scrolled ? 'surface-glass' : 'bg-transparent'
+          }`}
+        >
             <Logo />
             
             <div className="flex items-center gap-4">
@@ -83,7 +87,7 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage }) => {
                 
                 <a 
                     href="#contact" 
-                    className="hidden sm:inline-flex items-center justify-center h-10 w-10 rounded-full border border-zinc-200 bg-white text-zinc-900 hover:bg-zinc-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#006C35]"
+                    className="hidden sm:inline-flex items-center justify-center h-10 w-10 rounded-full border border-zinc-200/70 bg-white/70 backdrop-blur-md text-zinc-950 hover:bg-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#006C35] ring-premium"
                     aria-label="Contact Us"
                 >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
