@@ -27,8 +27,10 @@ const Hero: React.FC<HeroProps> = ({ content, whatsappLink }) => {
         </video>
 
         {/* Subtle vignette + top scrim (keeps header/text readable on any frame) */}
-        <div className="absolute inset-0 bg-[radial-gradient(80%_60%_at_50%_20%,rgba(0,0,0,0)_0%,rgba(0,0,0,0.55)_70%,rgba(0,0,0,0.75)_100%)]"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/25 to-zinc-50"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(90%_60%_at_50%_15%,rgba(0,0,0,0)_0%,rgba(0,0,0,0.45)_72%,rgba(0,0,0,0.78)_100%)]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/25 to-zinc-50"></div>
+        {/* Premium accent glow */}
+        <div className="pointer-events-none absolute -top-40 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(0,108,53,0.22),transparent_62%)] blur-2xl opacity-80"></div>
       </div>
 
       {/* Content */}
@@ -37,16 +39,14 @@ const Hero: React.FC<HeroProps> = ({ content, whatsappLink }) => {
         <div className="min-h-[92svh] flex items-end sm:items-center py-16 pt-32">
           <div className="w-full max-w-3xl text-start">
             <div className="animate-enter">
-              <div className="flex items-center gap-3 mb-6">
-                <span className="flex h-2 w-2 relative">
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#006C35]"></span>
-                </span>
-                <span className="text-white/80 text-xs font-semibold tracking-[0.22em] uppercase">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 backdrop-blur-md ring-premium">
+                <span className="inline-flex h-1.5 w-1.5 rounded-full bg-[#006C35]"></span>
+                <span className="text-white/85 text-[11px] font-semibold tracking-[0.22em] uppercase">
                   {content.eyebrow}
                 </span>
               </div>
 
-              <h1 className="text-white text-4xl sm:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.05]">
+              <h1 className="mt-6 text-white text-4xl sm:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.03]">
                 {content.h1}
               </h1>
 
