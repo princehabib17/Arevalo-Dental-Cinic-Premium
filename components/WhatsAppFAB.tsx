@@ -13,7 +13,7 @@ const WhatsAppFAB: React.FC<WhatsAppFABProps> = ({ whatsappLink, ariaLabel }) =>
       target="_blank"
       rel="noopener noreferrer"
       aria-label={ariaLabel}
-      className="fixed bottom-8 right-8 z-40 group flex items-center justify-center w-16 h-16 bg-[#25D366] text-white rounded-full shadow-[0_8px_30px_rgba(37,211,102,0.3)] hover:scale-110 hover:shadow-[0_15px_40px_rgba(37,211,102,0.4)] transition-all duration-300"
+      className="fab fixed bottom-8 right-8 z-40 group flex items-center justify-center w-16 h-16 bg-[#25D366] text-white rounded-full shadow-[0_8px_30px_rgba(37,211,102,0.3)] hover:scale-110 hover:shadow-[0_15px_40px_rgba(37,211,102,0.4)] transition-all duration-300"
     >
       <div className="absolute inset-0 rounded-full border border-white/20 animate-ping opacity-20"></div>
       <svg

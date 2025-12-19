@@ -55,6 +55,50 @@
         -ms-overflow-style: none;
         scrollbar-width: none;
       }
+
+      /* Direction (RTL) visual fixes */
+      html[dir="rtl"] .hero-subhead {
+        border-left: 0;
+        padding-left: 0;
+        border-right: 2px solid rgba(0, 108, 53, 0.35);
+        padding-right: 1.5rem;
+      }
+
+      @media (max-width: 767px) {
+        html[dir="rtl"] .journey-line {
+          left: auto;
+          right: 1.5rem;
+        }
+        html[dir="rtl"] .journey-marker {
+          left: auto;
+          right: 1.5rem;
+          transform: translateX(50%);
+        }
+        html[dir="rtl"] .journey-content {
+          padding-left: 0 !important;
+          padding-right: 5rem !important;
+        }
+      }
+
+      html[dir="rtl"] .fab {
+        right: auto;
+        left: 2rem;
+      }
+
+      /* Respect reduced-motion: keep things calm */
+      @media (prefers-reduced-motion: reduce) {
+        .animate-marquee,
+        .animate-enter,
+        .animate-ping {
+          animation: none !important;
+        }
+
+        /* Ensure "enter" content is still visible when animation is disabled */
+        .animate-enter {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      }
     </style>
   <script type="importmap">
 {
