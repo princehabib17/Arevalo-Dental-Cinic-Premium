@@ -12,7 +12,7 @@ const Team: React.FC<TeamProps> = ({ content }) => {
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="max-w-3xl">
                     <span className="inline-flex items-center gap-2 rounded-full border border-zinc-200/70 bg-white/70 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-zinc-600 ring-premium">
-                        <span className="inline-flex h-1.5 w-1.5 rounded-full bg-[#006C35]"></span>
+                        <span className="inline-flex h-1.5 w-1.5 rounded-full bg-[color:var(--accent)]"></span>
                         Our doctors
                     </span>
                     <h2 className="mt-5 text-3xl sm:text-5xl font-semibold tracking-tight text-zinc-950">
@@ -51,7 +51,7 @@ const Team: React.FC<TeamProps> = ({ content }) => {
                                     </div>
                                     <div className="p-6">
                                         <h3 className="text-base font-semibold text-zinc-950">{doctor.name}</h3>
-                                        <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#006C35] opacity-90">
+                                        <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-[color:var(--accent)] opacity-90">
                                             {doctor.role}
                                         </p>
                                     </div>
@@ -75,7 +75,7 @@ const Team: React.FC<TeamProps> = ({ content }) => {
                             </div>
                             <div className="p-7">
                                 <h3 className="text-base font-semibold text-zinc-950">{doctor.name}</h3>
-                                <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#006C35] opacity-90">{doctor.role}</p>
+                                <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-[color:var(--accent)] opacity-90">{doctor.role}</p>
                             </div>
                         </div>
                     ))}

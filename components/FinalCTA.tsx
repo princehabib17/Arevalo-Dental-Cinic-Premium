@@ -9,11 +9,12 @@ interface FinalCTAProps {
 
 const FinalCTA: React.FC<FinalCTAProps> = ({ content, whatsappLink }) => {
   return (
-    <section className="bg-white border-t border-zinc-100 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(#e4e4e7_1px,transparent_1px)] [background-size:20px_20px] opacity-40"></div>
+    <section className="bg-[color:var(--paper-2)] border-t border-black/5 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(rgba(11,12,16,0.18)_1px,transparent_1px)] [background-size:22px_22px] opacity-25"></div>
+      <div className="pointer-events-none absolute -top-24 left-1/2 h-80 w-[900px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(var(--accent-rgb),0.12),transparent_62%)] blur-2xl"></div>
       
       <div className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 text-center relative z-10">
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-2xl mx-auto stagger-in">
             <h2 className="text-3xl font-bold tracking-tight text-zinc-950 sm:text-4xl mb-6">
             {content.line}
             </h2>

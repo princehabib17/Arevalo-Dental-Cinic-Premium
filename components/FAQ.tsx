@@ -13,7 +13,7 @@ const FAQItemComponent: React.FC<{ item: FAQItem }> = ({ item }) => {
         <div className="surface-glass ring-premium rounded-2xl overflow-hidden">
             <button 
                 onClick={() => setIsOpen(!isOpen)}
-                className="flex w-full items-center justify-between px-5 py-5 text-left transition-colors hover:text-[#006C35] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006C35]"
+                className="flex w-full items-center justify-between px-5 py-5 text-left transition-colors hover:text-[color:var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]"
                 aria-expanded={isOpen}
             >
                 <span className="text-sm sm:text-base font-semibold text-zinc-950">{item.question}</span>
@@ -39,7 +39,7 @@ const FAQ: React.FC<FAQProps> = ({ content }) => {
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-zinc-200/70 bg-white/70 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-zinc-600 ring-premium">
-            <span className="inline-flex h-1.5 w-1.5 rounded-full bg-[#006C35]"></span>
+            <span className="inline-flex h-1.5 w-1.5 rounded-full bg-[color:var(--accent)]"></span>
             FAQ
           </span>
           <h2 className="mt-5 text-3xl sm:text-5xl font-semibold tracking-tight text-zinc-950">
