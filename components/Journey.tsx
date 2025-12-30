@@ -14,7 +14,7 @@ const Journey: React.FC<JourneyProps> = ({ content, whatsappLink }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           <div className="lg:col-span-5">
             <span className="inline-flex items-center gap-2 rounded-full border border-zinc-200/70 bg-white/70 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-zinc-600 ring-premium">
-              <span className="inline-flex h-1.5 w-1.5 rounded-full bg-[#006C35]"></span>
+              <span className="inline-flex h-1.5 w-1.5 rounded-full bg-[color:var(--accent)]"></span>
               Process
             </span>
             <h2 className="mt-5 text-3xl sm:text-5xl font-semibold tracking-tight text-zinc-950">
@@ -52,7 +52,7 @@ const Journey: React.FC<JourneyProps> = ({ content, whatsappLink }) => {
                         <p className="mt-1 text-sm text-zinc-600 leading-relaxed">{step.description}</p>
                       </div>
                     </div>
-                    <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[radial-gradient(circle_at_center,rgba(0,108,53,0.18),transparent_60%)] blur-2xl opacity-60"></div>
+                    <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[radial-gradient(circle_at_center,rgba(var(--accent-rgb),0.18),transparent_60%)] blur-2xl opacity-60"></div>
                   </li>
                 ))}
               </ol>

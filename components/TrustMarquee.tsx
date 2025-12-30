@@ -8,7 +8,7 @@ interface TrustMarqueeProps {
 
 const TrustMarquee: React.FC<TrustMarqueeProps> = ({ content }) => {
   return (
-    <section className="relative overflow-hidden py-14 sm:py-18">
+    <section className="relative overflow-hidden py-14 sm:py-18 animate-enter delay-200">
       <style>{`
         @keyframes marquee {
           0% { transform: translateX(0%); }
@@ -33,7 +33,7 @@ const TrustMarquee: React.FC<TrustMarqueeProps> = ({ content }) => {
               {content.line}
             </p>
             <div className="hidden sm:flex items-center gap-2 text-xs text-zinc-500">
-              <span className="inline-flex h-1.5 w-1.5 rounded-full bg-[#006C35]"></span>
+              <span className="inline-flex h-1.5 w-1.5 rounded-full bg-[color:var(--accent)]"></span>
               <span className="font-medium">Insurance ready</span>
             </div>
           </div>

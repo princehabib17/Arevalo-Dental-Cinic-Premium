@@ -12,7 +12,7 @@ const Footer: React.FC<FooterProps> = ({ language, setLanguage, content }) => {
   return (
     <footer className="relative overflow-hidden pt-20 sm:pt-28 pb-10 bg-zinc-950 text-white">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(900px_500px_at_20%_0%,rgba(0,108,53,0.22),transparent_55%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(900px_500px_at_20%_0%,rgba(var(--accent-rgb),0.22),transparent_55%)]"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black via-zinc-950 to-black"></div>
       </div>
 

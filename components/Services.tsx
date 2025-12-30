@@ -22,7 +22,7 @@ const ServiceCard: React.FC<{ title: string; description: string; icon: string; 
             ].join(" ")}
         >
             <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute -top-32 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(0,108,53,0.22),transparent_62%)] blur-2xl"></div>
+                <div className="absolute -top-32 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(var(--accent-rgb),0.22),transparent_62%)] blur-2xl"></div>
             </div>
 
             <div className="relative flex items-start gap-4">
@@ -46,7 +46,7 @@ const ServiceCard: React.FC<{ title: string; description: string; icon: string; 
             </div>
 
             <div className="relative mt-6 flex items-center gap-3">
-                <span className="inline-flex h-1.5 w-1.5 rounded-full bg-[#006C35]"></span>
+                <span className="inline-flex h-1.5 w-1.5 rounded-full bg-[color:var(--accent)]"></span>
                 <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-zinc-500">Premium care</span>
             </div>
         </div>
@@ -63,7 +63,7 @@ const Services: React.FC<ServicesProps> = ({ content }) => {
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="max-w-2xl">
                     <span className="inline-flex items-center gap-2 rounded-full border border-zinc-200/70 bg-white/70 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-zinc-600 ring-premium">
-                        <span className="inline-flex h-1.5 w-1.5 rounded-full bg-[#006C35]"></span>
+                        <span className="inline-flex h-1.5 w-1.5 rounded-full bg-[color:var(--accent)]"></span>
                         Our expertise
                     </span>
                     <h2 className="mt-5 text-3xl sm:text-5xl font-semibold tracking-tight text-zinc-950">
